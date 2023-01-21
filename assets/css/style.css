@@ -1,5 +1,18 @@
 body {
-    background-color: #FAAF80;
+    background-color: #FFB9B9;
     font-family: 'Prata', serif;
+}
+
+header {
+    background: #FF9494;
+}
+
+#city-search {
+    background: #FFDDD2;
+    padding: 100px;
+}
+
+.col-lg-9 {
+    background: white;
 }
 

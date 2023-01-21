@@ -18,37 +18,44 @@
         <h1 class="display-2">Weather Dashboard</h1>
     </header>
 
-<main>
+
 <!-- search for city section -->
-    <section class="col-lg-2 bg-light p-3 rounded" id="citySearch">
+<div class="container">
+    <div class="row g-5 mt-5">
+    <div class="col-lg-2 p-3 rounded">
         <h2>Search For Your City</h2>
             <form class="form-inline mt-3 mb-3 d-flex flex-column">
-                <input class="form-control float-left mr-ms-2" type="text" aria-label="Search" placeholder="Search your city..." />
+                <input id="city-input" class="form-control float-left mr-ms-2" type="text" aria-label="Search" placeholder="Search your city..." />
                 <datalist id="datalistOptions"></datalist>
             </form>
-            <div>
-                <button class="btn bg-secondary text-white my-2" type="submit">Search</button>
-            </div>
-    </section>
+                <button class="btn bg-secondary text-white my-2" type="submit" onclick="getCities()">Search</button>
+            <!-- <div id="city"></div> -->
+    </div>
 <!-- cites weather for today-->
-    <section class="col-lg-9">
-        <div class="col-lg-12">
-            <h2 class="city-weather"></h2>
-            <p id="temperature"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
+    <div class="col-lg-9">
+        <div class="col-lg-12" style="margin-bottom:20px;">
+            <p id="date"></p>
+            <p>City: <span id="city-weather"></span></p>
+            <p>Temperature: <span id="temperature"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>Wind: <span id="wind"></span></p>
         </div>
-    </section>
+        <br>
 <!-- 5 day forecast -->
-    <section>
-        <div class=" forecast-title col">
+        <div class="row">
+            <div class="forecast-title col" style="margin-top: 10rem">
                 <h2>5-Day Forecast</h2>
+            </div>
         </div>
         <div class="row justify-content-between" id="forecast"></div>
-    </section>
-</main>
+    </div>
+    </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
     <script src="./assets/js/style.js"></script>
 </body>
 </html>
