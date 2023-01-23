@@ -1,9 +1,8 @@
-const APIKey = "95c2b51114b0df107ba878d1ba289bbc";
+const APIKey = "d5cc78d0b6aec4cbbab956d440c97089";
 // let cities = [];
 let currentDay = dayjs().format('MMM DD, YYYY');
 let date = document.getElementById('date');
 date.innerHTML='Today is ' + currentDay;
-
 
 // sets the cities into the local storage
 // function setCitiesFromLocalStorage() {
@@ -21,7 +20,7 @@ function getCities(){
     let win = document.getElementById('wind');
     let city = document.getElementById('city-input').value;
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
-
+    
     
 
     fetch(weatherURL)
@@ -35,18 +34,28 @@ function getCities(){
         hum.innerHTML = data.main.humidity + " %"
         win.innerHTML = data.wind.speed + " MPH"
     })
-    forecast(city);
 }
+
+
+// let search = document.getElementById('search');
+// search.addEventListener('click', function(event){
+//     event.preventDefault();
+//     getCities();
+//     forecast();
+
+// })
+
 
 function forecast(){
     let forecast = document.getElementById('forecast');
-    let headers = new Headers();
-    let city = document.getElementById('city-input').value;
+    // let headers = new Headers();
+    let city1 = document.getElementById('city-input').value;
+    // document.write(city);
     // const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     // const d = new Date();
     // let day = weekday[d.getDay()];
     // for (let i=0; i<day.length; i++);
-    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?/daily?q=${city}&cnt=5&units=imperial&APPID=${APIKey}`;
+    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city1}&units=imperial&appid=${APIKey}`;
     
     // return fetch(forecastURL, {
     //     method: 'GET',
