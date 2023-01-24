@@ -20,16 +20,14 @@
 
 
 <!-- search for city section -->
-<div class="container">
-    <div class="row g-5 mt-5">
-    <div class="col-lg-2 p-3 rounded">
-        <h2>Search For Your City</h2>
-            <form class="form-inline mt-3 mb-3 d-flex flex-column">
-                <input id="city-input" class="form-control float-left mr-ms-2" type="text" aria-label="Search" placeholder="Search your city..." />
-                <datalist id="datalistOptions"></datalist>
-            </form>
-                <button class="btn bg-secondary text-white my-2" type="button" onclick="getCities();forecast();">Search</button>
-            <!-- <div id="city"></div> -->
+    <div class="container row g-5 mt-5">
+        <div class="col-lg-2 p-3 rounded">
+            <h2>Search For Your City</h2>
+                <form class="form-inline mt-3 mb-3 d-flex flex-column">
+                    <input id="city-input" class="form-control float-left mr-ms-2" type="text" aria-label="Search" placeholder="Search your city..." />
+                    <datalist id="datalistOptions"></datalist>
+                </form>
+        <button class="btn bg-secondary text-white my-2" type="button" onclick="getCities();forecast();">Search</button>
     </div>
 <!-- cites weather for today-->
     <div class="col-lg-9">
@@ -39,18 +37,17 @@
             <p>Temperature: <span id="temperature"></span></p>
             <p>Humidity: <span id="humidity"></span></p>
             <p>Wind: <span id="wind"></span></p>
+            <div class="weather-icon"></div>
         </div>
+    </div>
         <br>
 <!-- 5 day forecast -->
-        <div class="row">
-            <div class="forecast-title col" style="margin-top: 10rem">
-                <h2>5-Day Forecast</h2>
-            </div>
+    <h2 class="fore col" style="margin-top: 10rem">5-Day Forecast</h2>
+        <div id="forecast">
+            <div class="row justify-content-between"></div>
         </div>
-        <div class="row justify-content-between" id="forecast"></div>
+
     </div>
-    </div>
-</div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
