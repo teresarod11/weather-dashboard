@@ -43,7 +43,7 @@ function getCities(){
     })
     .then(function(data){
         console.log(data);
-        setCitiesFromLocalStorage(data.name);
+        // setCitiesFromLocalStorage(data.name);
         currentCity.innerHTML = data.name
         temp.innerHTML = data.main.temp + " °F"
         hum.innerHTML = data.main.humidity + " %"
@@ -52,6 +52,7 @@ function getCities(){
 }
 // function that displays the five day forecast
 function forecast(){
+  
     let city1 = document.getElementById('city-input').value;
     const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city1}&units=imperial&appid=${APIKey}`;
 
@@ -70,6 +71,14 @@ function forecast(){
             var container = document.createElement('div');
             container.classList.add('card','col');
             container.classList.add('border', 'border-dark', 'rounded');
+            
+            var date = days[i].dt;
+            var dt = new Date(date * 1000);
+            var datec = document.createElement("h2");
+            datec.textContent = (dayjs(dt).format('MMM DD'));
+            // var day = document.createElement('h2');
+            // day.textContent = days[i].weekDay;
+            // day.classList.add('day');
 
             var temp = document.createElement('p');
             temp.textContent = days[i].main.temp + ' °F';
@@ -84,7 +93,7 @@ function forecast(){
             var url = 'http://openweathermap.org/img/wn/'+ days[i].weather[0].icon +'.png';
             img.setAttribute('src', url);
 
-            container.append(img,hum,temp,wind);
+            container.append(img,datec,hum,temp,wind);
             fore.append(container);
         };
     }); 
